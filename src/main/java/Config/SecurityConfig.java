@@ -1,4 +1,7 @@
+package Config;
+
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,6 +18,7 @@ import java.io.IOException;
 
 @Configuration
 @EnableWebSecurity
+@ImportResource({"classpath:webSecurityConfig.xml"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private AuthenticationFailureHandler aFH = new AuthenticationFailureHandler() {
