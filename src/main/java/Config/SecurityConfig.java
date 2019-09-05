@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/signin.html")
+                .loginPage("/signin.jsp")
                 .loginProcessingUrl("/signingin")
                 .defaultSuccessUrl("index.jsp", true)
                 .failureHandler(aFH)

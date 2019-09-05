@@ -11,8 +11,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -77,7 +78,7 @@
       <workItem from="1567592211880" duration="142000" />
       <workItem from="1567592594619" duration="144000" />
       <workItem from="1567592906667" duration="84000" />
-      <workItem from="1567593043922" duration="11984000" />
+      <workItem from="1567593043922" duration="16289000" />
     </task>
     <servers />
   </component>
