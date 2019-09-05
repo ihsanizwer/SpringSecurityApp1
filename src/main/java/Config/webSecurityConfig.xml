@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+             xsi:schemaLocation="
+		http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+    <http use-expressions="true">
+        <intercept-url pattern="/signin*" access="isAnonymous()"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+
+        <form-login login-page="signin.html" default-target-url="index.jsp" authentication-failure-url="/signin.html?error=true" />
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <!--
+            <user-service>
+                <user name="l1_user" password="1ntern@SM" authorities="USER"/>
+                <user name="app_admin" password="who'sTheB0ss" authorities="ADMIN"/>
+            </user-service> -->
+            <password-encoder ref="passwd" />
+        </authentication-provider>
+    </authentication-manager>
+    <beans:bean id="passwd" class="org.springframework.security.crypto.scrypt.SCryptPasswordEncoder">
+    </beans:bean>
+
+</beans:beans>
 
 
 
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-</beans>

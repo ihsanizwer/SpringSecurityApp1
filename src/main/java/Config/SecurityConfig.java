@@ -8,7 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
@@ -20,6 +21,8 @@ import java.io.IOException;
 @EnableWebSecurity
 @ImportResource({"classpath:webSecurityConfig.xml"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    PasswordEncoder pf = new SCryptPasswordEncoder();
 
     private AuthenticationFailureHandler aFH = new AuthenticationFailureHandler() {
         public void onAuthenticationFailure(javax.servlet.http.HttpServletRequest httpServletRequest, javax.servlet.http.HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
@@ -36,9 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final AuthenticationManagerBuilder authManB) throws Exception{
         authManB.inMemoryAuthentication()
-            .withUser("l1_user").password(new Pbkdf2PasswordEncoder().encode("1ntern@SM")).roles("USER")
+            .withUser("l1_user").password(pf.encode("1ntern@SM")).roles("USER")
             .and()
-            .withUser("app_admin").password(new Pbkdf2PasswordEncoder().encode("who'sTheB0ss")).roles("ADMIN");
+            .withUser("app_admin").password(pf.encode("who'sTheB0ss")).roles("ADMIN");
     }
 
 @Override
@@ -48,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/annonymous*").anonymous()
-                .antMatchers("/login*").permitAll()
+                .antMatchers("/signin*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
