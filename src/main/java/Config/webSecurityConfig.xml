@@ -10,7 +10,7 @@
         <intercept-url pattern="/signin*" access="isAnonymous()"/>
         <intercept-url pattern="/**" access="isAuthenticated()"/>
 
-        <form-login login-page="signin.html" default-target-url="index.jsp" authentication-failure-url="/signin.html?error=true" />
+        <form-login login-page="signin.jsp" default-target-url="index.jsp" authentication-failure-url="/signin.jsp?error=true" />
     </http>
 
     <authentication-manager>

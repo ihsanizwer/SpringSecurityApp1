@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SpringSecurityApp1:war" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ee2af800-c5b8-49a6-bb5f-01e3a90d8779" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,6 +40,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,11 +51,15 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\IdeaProjects\SpringSecurityApp1\web" />
+      <recent name="C:\Users\Administrator\IdeaProjects\SpringSecurityApp1\web\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -78,7 +88,9 @@
       <workItem from="1567592211880" duration="142000" />
       <workItem from="1567592594619" duration="144000" />
       <workItem from="1567592906667" duration="84000" />
-      <workItem from="1567593043922" duration="17379000" />
+      <workItem from="1567593043922" duration="17884000" />
+      <workItem from="1567749764392" duration="12460000" />
+      <workItem from="1568007893794" duration="3290000" />
     </task>
     <servers />
   </component>
